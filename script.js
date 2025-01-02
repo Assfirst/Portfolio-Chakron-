@@ -1,4 +1,3 @@
-// โค้ด JavaScript ของคุณ (เหมือนเดิมทั้งหมด)
 let resultDisplayed = false;
 
 function appendToDisplay(value) {
