@@ -9,9 +9,10 @@
 <body>
     <nav>
         <div class="container">
-            <a href="index.html" class="active">หน้าหลัก</a>
-            <a href="calculator.html">เครื่องคิดเลข</a>
-            <a href="#contact">ติดต่อเรา</a>
+            <!-- ใช้ grid-area เพื่อจัดเรียงลำดับ -->
+            <a href="index.html" class="active" style="grid-area: home;">หน้าหลัก</a>
+            <a href="calculator.html" style="grid-area: calc;">เครื่องคิดเลข</a>
+            <a href="#contact" style="grid-area: contact;">ติดต่อเรา</a>
         </div>
     </nav>
 
@@ -66,5 +67,8 @@
             <p>© 2025 (Snowdent by chakron)</p>
         </div>
     </footer>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.6.4/math.js"></script>
 </body>
-</html>
+    </html>
