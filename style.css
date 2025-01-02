@@ -113,12 +113,12 @@ section h2 {
     }
 
     nav .container {
-        grid-template-areas:
-            "home"
-            "calc"
-            "contact";
-        grid-template-columns: 1fr; /* 1 คอลัมน์สำหรับหน้าจอเล็ก */
-    }
+    display: grid;
+    grid-template-areas: "home calc contact";
+    grid-template-columns: 1fr 1.5fr 1fr;
+    grid-gap: 30px; /* เพิ่ม grid-gap เป็น 30px */
+    align-items: center;
+}
 
     nav a {
         text-align: center;
