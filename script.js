@@ -1,4 +1,16 @@
 let resultDisplayed = false;
+let angleMode = 'deg'; // เริ่มต้นด้วยโหมดองศา
+let lastResult = null; // เก็บผลลัพธ์ล่าสุด
+
+// ฟังก์ชันแปลงเรเดียนเป็นองศา (ใช้ math.js)
+function toDegrees(radians) {
+    return math.divide(math.multiply(radians, 180), math.pi);
+}
+
+// ฟังก์ชันแปลงองศาเป็นเรเดียน (ใช้ math.js)
+function toRadians(degrees) {
+    return math.divide(math.multiply(degrees, math.pi), 180);
+}
 
 function appendToDisplay(value) {
     console.log("Appending:", value);
@@ -44,34 +56,45 @@ function calculateTrigonometry(funcName) {
         let arg = expression.substring(funcIndex + funcName.length + 1, closeBracketIndex);
 
         // แปลงอาร์กิวเมนต์เป็นตัวเลข
-        let number = parseFloat(arg);
-        if (isNaN(number)) {
+        let number;
+        try {
+            number = math.evaluate(arg);
+        } catch (error) {
             throw new Error('Invalid argument for trigonometry function');
         }
 
-        // แปลงมุมจากองศาเป็นเรเดียน (ถ้าจำเป็น)
-        let radians = number * (Math.PI / 180);
-
-        // คำนวณค่าตรีโกณมิติ
+        // คำนวณค่าตรีโกณมิติโดยใช้ math.js
         let result;
+        if (angleMode === 'deg') {
+            number = toRadians(number); // แปลงเป็นเรเดียนก่อนคำนวณ
+        }
         switch (funcName) {
             case 'sin':
-                result = Math.sin(radians);
+                result = math.sin(number);
                 break;
             case 'cos':
-                result = Math.cos(radians);
+                result = math.cos(number);
                 break;
             case 'tan':
-                result = Math.tan(radians);
+                result = math.tan(number);
                 break;
             case 'asin':
-                result = Math.asin(number) * (180 / Math.PI); // แปลงผลลัพธ์กลับเป็นองศา
+                result = math.asin(number);
+                if (angleMode === 'deg') {
+                    result = toDegrees(result); // แปลงผลลัพธ์กลับเป็นองศา
+                }
                 break;
             case 'acos':
-                result = Math.acos(number) * (180 / Math.PI); // แปลงผลลัพธ์กลับเป็นองศา
+                result = math.acos(number);
+                if (angleMode === 'deg') {
+                    result = toDegrees(result); // แปลงผลลัพธ์กลับเป็นองศา
+                }
                 break;
             case 'atan':
-                result = Math.atan(number) * (180 / Math.PI); // แปลงผลลัพธ์กลับเป็นองศา
+                result = math.atan(number);
+                if (angleMode === 'deg') {
+                    result = toDegrees(result); // แปลงผลลัพธ์กลับเป็นองศา
+                }
                 break;
             default:
                 throw new Error('Invalid trigonometry function');
@@ -90,17 +113,19 @@ function calculateTrigonometry(funcName) {
     }
 }
 
+// เพิ่มปุ่มสลับโหมดเรเดียน/องศา
+function toggleAngleMode() {
+    angleMode = angleMode === 'deg' ? 'rad' : 'deg';
+    document.getElementById('angle-mode').textContent = angleMode.toUpperCase();
+}
+
 function factorial(n) {
-    if (n === 0) {
-        return 1;
-    } else if (n < 0) {
+    if (n < 0) {
         return "Error"; // แฟกทอเรียลไม่นิยามสำหรับจำนวนลบ
+    } else if (!Number.isInteger(n)) {
+        return math.gamma(n + 1); // ใช้ฟังก์ชันแกมมาสำหรับจำนวนจริง
     } else {
-        let result = 1;
-        for (let i = 1; i <= n; i++) {
-            result *= i;
-        }
-        return result;
+        return math.factorial(n); // ใช้ฟังก์ชัน factorial จาก math.js
     }
 }
 
@@ -109,8 +134,10 @@ function calculate() {
         let expression = document.getElementById('input-output').value;
         console.log("Expression:", expression);
 
-        // แปลงสัญลักษณ์ ÷ เป็น /
-        expression = expression.replace(/÷/g, '/');
+        // ถ้ามีการใช้ = ให้นำผลลัพธ์ก่อนหน้ามาต่อ
+        if (resultDisplayed && lastResult !== null && !isNaN(parseFloat(expression))) {
+            expression = lastResult + expression;
+        }
 
         // จัดการกับ sin, cos, tan, asin, acos, atan
         const trigFunctions = ['sin', 'cos', 'tan', 'asin', 'acos', 'atan'];
@@ -122,8 +149,12 @@ function calculate() {
         }
 
         // จัดการกับแฟกทอเรียล
-        expression = expression.replace(/(\d+)!\)?/g, (match, num) => {
-            return factorial(parseInt(num));
+        expression = expression.replace(/(\d+(?:\.\d+)?)!/g, (match, num) => {
+            let parsedNum = parseFloat(num);
+            if (isNaN(parsedNum)) {
+                throw new Error("Invalid input for factorial");
+            }
+            return factorial(parsedNum);
         });
 
         // ใช้ Math.js คำนวณ
@@ -132,9 +163,10 @@ function calculate() {
 
         document.getElementById('input-output').value = result;
         resultDisplayed = true;
+        lastResult = result; // เก็บผลลัพธ์ล่าสุด
     } catch (error) {
         console.error("Error in calculate():", error);
-        document.getElementById('input-output').value = 'Error';
+        document.getElementById('input-output').value = 'Error: ' + error.message;
         resultDisplayed = true;
     }
 }
@@ -146,14 +178,14 @@ function clearDisplay() {
 }
 
 function parseSet(str) {
-    if (str === null || str.trim() === '') {
-      return undefined; // คืนค่า undefined ถ้า str เป็น null หรือว่างเปล่า
+    if (str === null || str.trim() === '' || str.trim() === '{}') {
+      return new Set(); // คืนค่าเซตว่าง
     }
     str = str.replace(/[{}]/g, ''); // ลบวงเล็บปีกกาออก
     let elements = str.split(/[\s,]+/).map(x => {
-      let trimmed = x.trim(); // เรียก .trim() และเก็บค่าไว้ในตัวแปร
+      let trimmed = x.trim();
       if (trimmed === '') {
-        return NaN; // ถ้า trimmed เป็น empty string ให้ return NaN
+        return NaN; // ไม่ควรเกิดขึ้น เพราะ split ควรจัดการช่องว่างได้
       }
       let num = parseFloat(trimmed);
       return isNaN(num) ? trimmed : num;
@@ -162,7 +194,7 @@ function parseSet(str) {
       return undefined; // คืนค่า undefined ถ้ามี element ที่ไม่ใช่ตัวเลข
     }
     return new Set(elements);
-  }
+}
 
 // ฟังก์ชันช่วยแปลง Set object กลับเป็น string
 function formatSet(set) {
@@ -170,52 +202,33 @@ function formatSet(set) {
 }
 
 // ฟังก์ชันสำหรับดำเนินการกับเซต (ยูเนียน)
-function setUnion(...sets) {
-    try {
-        let union = new Set();
-        for (let set of sets) {
-            for (let element of set) {
-                union.add(element);
-            }
-        }
-        return union;
-    } catch (error) {
-        console.error("Error in setUnion():", error);
-        return 'Error';
+function setUnion(setA, setB) {
+    if (!(setA instanceof Set) || !(setB instanceof Set)) {
+        return 'Error: Invalid set input';
     }
+    return math.setUnion(setA, setB);
 }
 
 // ฟังก์ชันสำหรับดำเนินการกับเซต (อินเตอร์เซกชัน)
-function setIntersection(...sets) {
-    try {
-        let intersection = new Set(sets[0]);
-        for (let i = 1; i < sets.length; i++) {
-            intersection = new Set([...intersection].filter(x => sets[i].has(x)));
-        }
-        return intersection;
-    } catch (error) {
-        console.error("Error in setIntersection():", error);
-        return 'Error';
+function setIntersection(setA, setB) {
+    if (!(setA instanceof Set) || !(setB instanceof Set)) {
+        return 'Error: Invalid set input';
     }
+    return math.setIntersect(setA, setB);
 }
 
 // ฟังก์ชันสำหรับดำเนินการกับเซต (ผลต่าง)
 function setDifference(setA, setB) {
-    try {
-        if (!(setA instanceof Set) || !(setB instanceof Set)) {
-            return 'Error: Invalid set input';
-        }
-        let difference = new Set([...setA].filter(x => !setB.has(x)));
-        return difference;
-    } catch (error) {
-        console.error("Error in setDifference():", error);
-        return 'Error';
+    if (!(setA instanceof Set) || !(setB instanceof Set)) {
+        return 'Error: Invalid set input';
     }
+    return math.setDifference(setA, setB);
 }
 
 function calculateSetOperation(operation, ...sets) {
     try {
-        let result = operation(...sets);
+        // ใช้ math.evaluate เพื่อรองรับการดำเนินการกับหลายเซต
+        let result = math.evaluate(`${operation.name}(${sets.map(s => formatSet(s)).join(',')})`);
         if (result instanceof Set) {
             document.getElementById('input-output').value = formatSet(result);
         } else {
@@ -283,25 +296,15 @@ function solveEquation() {
     try {
         let equation = document.getElementById('input-output').value;
 
-        // แยกสมการเป็นด้านซ้ายและขวา
-        let sides = equation.split('=');
-        let leftSide = sides[0].trim();
-        let rightSide = sides[1].trim();
-
-        // ตรวจสอบว่ามีตัวแปร x หรือไม่
-        if (!leftSide.includes('x') && !rightSide.includes('x')) {
-            throw new Error('สมการต้องมีตัวแปร x');
-        }
-
         // ใช้ math.js ช่วยแก้สมการ
-        let solution = math.solve(math.parse(leftSide), math.parse(rightSide), 'x');
+        let solution = math.solveEquation(equation);
 
         // แสดงผลลัพธ์
-        document.getElementById('input-output').value = 'x = ' + solution.toString();
+        document.getElementById('input-output').value = 'x = ' + math.format(solution, {fraction: 'ratio'});
         resultDisplayed = true;
 
     } catch (error) {
-      console.error("Error in solveEquation():", error);
+        console.error("Error in solveEquation():", error);
         document.getElementById('input-output').value = 'Error: ' + error.message;
         resultDisplayed = true;
     }
@@ -321,7 +324,7 @@ function toggleDarkMode() {
           button.classList.toggle('equal');
       }
     });
-  }
+}
 
 function backspace() {
     let inputOutput = document.getElementById('input-output');
@@ -475,4 +478,4 @@ function displayTruthTable(truthTable, expression) {
             popup: 'truth-table-popup'
         }
     });
-}
+                       }
