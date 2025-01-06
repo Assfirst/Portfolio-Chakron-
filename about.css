@@ -1,4 +1,13 @@
 /* about.css */
-.about-content {
+.card {
+    border-radius: 15px;
     margin-top: 30px;
+}
+
+#profile-image {
+   max-width: 150px;
+    max-height: 150px;
+   object-fit: cover;
+    margin: 10px auto;
+    display: block;
 }
