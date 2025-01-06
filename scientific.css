@@ -1,10 +1,10 @@
 /* scientific.css */
 .calculator {
     width: 500px;
-    border: 2px solid #333;
+    border: 2px solid #3498db; /* สีเส้นขอบ */
     border-radius: 10px;
     padding: 25px;
     background-color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    margin: 20px auto; /* เพิ่ม margin ตรงกลาง */
+    margin: 20px auto;
 }
