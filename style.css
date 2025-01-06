@@ -3,8 +3,8 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f4f8; /* สีพื้นหลังหลัก */
-    color: #333;
+    background-color: #222; /* สีพื้นหลังหลัก (ดำ) */
+    color: #fff; /* สีตัวอักษรหลัก (ขาว) */
 }
 
 /* ปรับแต่ง Container ให้ตรงกลาง */
@@ -18,59 +18,52 @@ body {
 
 /* Navigation */
 .navbar {
-    background-color: #3498db; /* เปลี่ยนสีพื้นหลัง Navbar ให้เป็นสีฟ้า */
-    color: #ffffff; /* เปลี่ยนสีตัวอักษร */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* เพิ่มเงา */
-    padding: 1rem; /* เพิ่ม padding */
+    background-color: #333; /* สีพื้นหลัง Navbar (ดำเข้ม) */
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1); /* เงาสีขาวอ่อน */
 }
 
 .navbar-brand {
     font-weight: bold;
-    font-size: 1.5rem; /* เพิ่มขนาดตัวอักษร */
-    color: #ffffff; /* เปลี่ยนสีตัวอักษรของแบรนด์ให้เป็นสีขาว */
+    color: #fff; /* สีตัวอักษรแบรนด์ */
 }
 
 .navbar-nav .nav-link {
-    color: #ffffff; /* เปลี่ยนสีตัวอักษรของลิงก์ให้เป็นสีขาว */
-    font-size: 1.2rem; /* เพิ่มขนาดตัวอักษร */
-    padding: 0.5rem 1rem; /* เพิ่ม padding */
-    transition: color 0.3s ease, background-color 0.3s ease; /* เพิ่ม transition */
+    color: #fff; /* สีตัวอักษรลิงก์ */
+    transition: color 0.3s ease;
 }
 
 .navbar-nav .nav-link:hover {
-    color: #f1c40f; /* เปลี่ยนสีตัวอักษรเมื่อ hover */
-    background-color: #2980b9; /* เพิ่มสีพื้นหลังเมื่อ hover */
-    border-radius: 5px; /* เพิ่ม border-radius */
+    color: #ddd; /* สีตัวอักษรเมื่อ hover */
 }
 
 .navbar-nav .nav-link.active {
     font-weight: bold;
-    border-bottom: 3px solid #ffffff; /* เปลี่ยนสีเส้นขอบล่าง */
+    border-bottom: 3px solid #fff; /* เส้นใต้ลิงก์ active */
 }
 
 /* ปรับแต่งปุ่ม Hamburger Menu ให้มองเห็นได้ชัดเจน */
 .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
 }
-
 
 /* Header */
 header {
     text-align: center;
-    background-color: #d6eaf8; /* สีพื้นหลัง Header */
+    background-color: #444; /* สีพื้นหลัง Header (ดำอ่อน) */
     padding: 80px 0;
 }
 
 header h1 {
     font-size: 2.5rem;
     margin-bottom: 10px;
-    color: #333;
+    color: #eee; /* สีตัวอักษร Header */
 }
 
 header p {
     font-size: 1.2rem;
     line-height: 1.6;
-    color: #333;
+    color: #ddd; /* สีตัวอักษร Header */
 }
 
 /* Sections */
@@ -82,7 +75,7 @@ section h2 {
     text-align: center;
     margin-bottom: 30px;
     font-size: 2rem;
-     color: #3498db; /* สีของหัวข้อ */
+     color: #eee; /* สีหัวข้อ section */
 }
 
 /* Features */
@@ -94,7 +87,7 @@ section h2 {
 
 /* Footer */
 footer {
-    background: #34495e; /* สีพื้นหลัง Footer */
+    background: #111; /* สีพื้นหลัง Footer (ดำเข้ม) */
     color: #fff;
     text-align: center;
     padding: 20px 0;
@@ -104,11 +97,11 @@ footer {
 /* Calculator Styles */
 .calculator {
     width: 500px;
-    border: 2px solid #3498db; /* สีเส้นขอบ */
+    border: 2px solid #555; /* สีเส้นขอบ calculator */
     border-radius: 10px;
     padding: 25px;
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    background-color: #333; /* สีพื้นหลัง calculator */
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
     margin: 20px auto;
 }
 
@@ -120,10 +113,11 @@ footer {
     margin-bottom: 15px;
     font-size: 24px;
     text-align: right;
-    border: 1px solid #ccc;
+    border: 1px solid #777;
     border-radius: 8px;
-    background-color: #f0f4f8; /* สีพื้นหลัง input */
-    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #444; /* สีพื้นหลัง input */
+    box-shadow: inset 0 2px 5px rgba(255, 255, 255, 0.1);
+    color: #fff;
 }
 
 
@@ -140,77 +134,78 @@ button {
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    background-color: #f0f4f8; /* สีพื้นหลังปุ่ม */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    background-color: #555; /* สีพื้นหลังปุ่ม */
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+     color: #fff;
     transition: background-color 0.3s ease;
 }
 
 
 button:hover {
-    background-color: #e8e8e8;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    background-color: #666;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.2);
 }
 
 
 button.operator {
-    background-color: #ecf0f1; /* สีพื้นหลังปุ่มตัวดำเนินการ */
-     color: #3498db; /* สีปุ่มตัวดำเนินการ */
+    background-color: #666; /* สีพื้นหลังปุ่มตัวดำเนินการ */
+     color: #fff; /* สีปุ่มตัวดำเนินการ */
 }
 
 
 button.operator:hover {
-    background-color: #d6eaf8;
+    background-color: #777;
 }
 
 
 button.equal {
-    background-color: #2ecc71; /* สีปุ่มเท่ากับ */
+    background-color: #27ae60; /* สีปุ่มเท่ากับ */
     color: #fff;
 }
 
 button.equal:hover {
-    background-color: #27ae60;
+    background-color: #1e8449;
 }
 
 
 /* Dark Mode */
 body.dark-mode {
-    background-color: #2c3e50; /* สีพื้นหลัง Dark Mode */
-    color: #ecf0f1;
+     background-color: #222; /* สีพื้นหลัง Dark Mode */
+    color: #fff;
 }
 
 .calculator.dark-mode {
-    background-color: #34495e; /* สีพื้นหลัง Dark Mode */
-    border-color: #3498db;
+    background-color: #333; /* สีพื้นหลัง Dark Mode */
+    border-color: #555;
     box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
 }
 
 .display input.dark-mode {
-    background-color: #4d6177; /* สีพื้นหลัง input Dark Mode */
-    color: #ecf0f1;
+     background-color: #444; /* สีพื้นหลัง input Dark Mode */
+    color: #fff;
     border-color: #777;
     box-shadow: inset 0 2px 5px rgba(255, 255, 255, 0.1);
 }
 
 button.dark-mode {
-    background-color: #4d6177; /* สีพื้นหลังปุ่ม Dark Mode */
-    color: #ecf0f1;
+    background-color: #555; /* สีพื้นหลังปุ่ม Dark Mode */
+    color: #fff;
     border-color: #888;
     box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
 }
 
 button.dark-mode:hover {
-    background-color: #5d7187;
+    background-color: #666;
     box-shadow: 0 2px 4px rgba(255, 255, 255, 0.2);
 }
 
 button.dark-mode.operator {
-    background-color: #777;
-      color: #ecf0f1;
+    background-color: #666;
+     color: #fff;
 }
 
 button.dark-mode.operator:hover {
-    background-color: #666;
+    background-color: #777;
 }
 
 button.dark-mode.equal {
@@ -240,13 +235,14 @@ button.dark-mode.equal:hover {
 }
 
 .truth-table th {
-    background-color: #f2f2f2;
+    background-color: #333;
+    color: #fff;
 }
 
 .truth-table .true {
-    color: green;
+    color: #2ecc71; /* สี True */
 }
 
 .truth-table .false {
-    color: red;
+    color: #e74c3c; /* สี False */
     }
