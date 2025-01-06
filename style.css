@@ -18,33 +18,39 @@ body {
 
 /* Navigation */
 .navbar {
-    background-color: #ecf0f1; /* เปลี่ยนสีพื้นหลัง Navbar ให้เป็นสีดำ */
-    color: #ecf0f1;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* เพิ่มเงา */
+    background-color: #3498db; /* เปลี่ยนสีพื้นหลัง Navbar ให้เป็นสีฟ้า */
+    color: #ffffff; /* เปลี่ยนสีตัวอักษร */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* เพิ่มเงา */
+    padding: 1rem; /* เพิ่ม padding */
 }
 
 .navbar-brand {
     font-weight: bold;
-    color: #ecf0f1; /* เปลี่ยนสีตัวอักษรของแบรนด์ให้เป็นสีขาว */
+    font-size: 1.5rem; /* เพิ่มขนาดตัวอักษร */
+    color: #ffffff; /* เปลี่ยนสีตัวอักษรของแบรนด์ให้เป็นสีขาว */
 }
 
 .navbar-nav .nav-link {
-    color: #ecf0f1; /* เปลี่ยนสีตัวอักษรของลิงก์ให้เป็นสีขาว */
-    transition: color 0.3s ease;
+    color: #ffffff; /* เปลี่ยนสีตัวอักษรของลิงก์ให้เป็นสีขาว */
+    font-size: 1.2rem; /* เพิ่มขนาดตัวอักษร */
+    padding: 0.5rem 1rem; /* เพิ่ม padding */
+    transition: color 0.3s ease, background-color 0.3s ease; /* เพิ่ม transition */
 }
 
 .navbar-nav .nav-link:hover {
-    color: #d6eaf8; /* เปลี่ยนสีตัวอักษรเมื่อ hover */
+    color: #f1c40f; /* เปลี่ยนสีตัวอักษรเมื่อ hover */
+    background-color: #2980b9; /* เพิ่มสีพื้นหลังเมื่อ hover */
+    border-radius: 5px; /* เพิ่ม border-radius */
 }
 
 .navbar-nav .nav-link.active {
     font-weight: bold;
-    border-bottom: 3px solid #fff;
+    border-bottom: 3px solid #ffffff; /* เปลี่ยนสีเส้นขอบล่าง */
 }
 
 /* ปรับแต่งปุ่ม Hamburger Menu ให้มองเห็นได้ชัดเจน */
 .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 
