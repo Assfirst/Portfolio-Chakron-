@@ -1,50 +1,64 @@
 /* style.css */
 
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600&display=swap');
+
 /* General Styles */
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Kanit', sans-serif; /* เปลี่ยนฟอนต์ */
     margin: 0;
     padding: 0;
-    background-color: #f8f9fa; /* สีพื้นหลังหลัก (เทาอ่อน) */
-    color: #333;
-    transition: background-color 0.3s ease, color 0.3s ease; /* เพิ่ม transition ให้กับ background และ color */
+    background-color: #f5f5f5; /* สีพื้นหลังหลัก (เทาอ่อนมาก) */
+    color: #333; /* สีตัวอักษรหลัก */
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* ปรับแต่ง Container ให้ตรงกลาง */
 .container {
-    max-width: 960px;
+    max-width: 1024px; /* เพิ่มความกว้าง */
     margin-left: auto;
     margin-right: auto;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 20px; /* เพิ่ม padding */
+    padding-right: 20px;
 }
 
 /* Navigation */
 .navbar {
-    color: #fff;
+    background-color: #00796b; /* สีพื้นหลัง Navbar (เขียวเข้ม) */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .navbar-brand {
-    font-weight: bold;
+    font-weight: 600; /* หนาขึ้น */
     color: #fff;
+    font-size: 1.4rem; /* ขนาดใหญ่ขึ้น */
 }
 
 .navbar-nav .nav-link {
     color: #fff;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, background-color 0.3s ease; /* เพิ่ม transition */
+    padding: 0.5rem 1rem; /* เพิ่ม padding */
+    border-radius: 5px; /* มนขึ้น */
+    margin-left: 5px; /* เพิ่มระยะห่าง */
 }
 
 .navbar-nav .nav-link:hover {
-    color: #e0b0ff;
+    color: #00796b; /* สีเมื่อ hover */
+    background-color: #fff; /* พื้นหลังเมื่อ hover */
 }
 
 .navbar-nav .nav-link.active {
-    font-weight: bold;
-    border-bottom: 3px solid #fff;
+    font-weight: 500; /* หนาขึ้น */
+    border-bottom: none; /* ลบเส้นใต้ */
+    background-color: #fff; /* พื้นหลัง */
+    color: #00796b; /* สีตัวอักษร */
 }
 
 /* ปรับแต่งปุ่ม Hamburger Menu */
+.navbar-toggler {
+    border: none; /* ลบเส้นขอบ */
+}
+
 .navbar-toggler-icon {
     background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
 }
@@ -52,130 +66,126 @@ body {
 /* Header */
 header {
     text-align: center;
-    background-color: #e6e6fa; /* สีพื้นหลัง Header (ม่วงอ่อน) */
-    padding: 80px 0;
+    background: linear-gradient(135deg, #a5d6a7, #e8f5e9); /* ไล่สีพื้นหลัง Header */
+    padding: 100px 20px; /* เพิ่ม padding */
+    position: relative; /* กำหนด position */
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://www.transparenttextures.com/patterns/cubes.png"); /* เพิ่ม texture */
+    opacity: 0.3; /* ปรับความโปร่งใส */
 }
 
 header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-    color: #6a5acd; /* สีตัวอักษร Header (ม่วง) */
+    font-size: 3rem; /* ขนาดใหญ่ขึ้น */
+    margin-bottom: 20px; /* เพิ่มระยะห่าง */
+    color: #00796b; /* สีตัวอักษร Header */
+    font-weight: 600; /* หนาขึ้น */
+    position: relative; /* กำหนด position */
+    z-index: 1; /* วางทับ texture */
 }
 
 header p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    color: #212529; /* ปรับสีให้เข้มขึ้นเพื่อให้อ่านง่าย */
+    font-size: 1.3rem; /* ขนาดใหญ่ขึ้น */
+    line-height: 1.7; /* เพิ่มระยะห่างระหว่างบรรทัด */
+    color: #212529;
+    position: relative; /* กำหนด position */
+    z-index: 1; /* วางทับ texture */
 }
 
 /* Sections */
 section {
-    padding: 60px 0;
+    padding: 80px 0; /* เพิ่ม padding */
 }
 
 section h2 {
     text-align: center;
-    margin-bottom: 30px;
-    font-size: 2rem;
-    color: #4caf50; /* สีหัวข้อ Section (เขียว) */
+    margin-bottom: 40px; /* เพิ่มระยะห่าง */
+    font-size: 2.5rem; /* ขนาดใหญ่ขึ้น */
+    color: #00796b; /* สีหัวข้อ Section */
+    font-weight: 600; /* หนาขึ้น */
 }
 
 /* Features */
-/* style.css */
-
-/* ... โค้ด CSS ก่อนหน้า ... */
-
-/* Features (ปรับปรุง) */
 #features ul {
-    padding: 0; /* ลบ padding ของ <ul> */
+    padding: 0;
+    list-style: none; /* ลบสัญลักษณ์หัวข้อย่อย */
 }
 
-/* style.css */
-
-/* ... โค้ด CSS ก่อนหน้า ... */
-
-/* Features (เพิ่มสีสัน) */
 #features .feature-item {
-    margin-bottom: 20px;
-    padding: 15px;
+    margin-bottom: 25px; /* เพิ่มระยะห่าง */
+    padding: 20px; /* เพิ่ม padding */
     border-radius: 10px;
-    transition: box-shadow 0.3s ease, transform 0.3s ease, background-color 0.3s ease; /* เพิ่ม background-color ใน transition */
+    transition: box-shadow 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
     display: flex;
     align-items: center;
-    background-color: #f8f9fa; /* สีพื้นหลังอ่อนๆ */
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
 }
 
 #features .feature-item:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transform: translateY(-5px);
-    background-color: #e9ecef; /* สีพื้นหลังเข้มขึ้นเมื่อ hover */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15); /* เพิ่มเงาเมื่อ hover */
+    transform: translateY(-5px); /* ยกขึ้นเมื่อ hover */
 }
 
 #features .feature-link {
-    font-size: 1.2rem;
-    font-weight: bold;
+    font-size: 1.3rem; /* ขนาดใหญ่ขึ้น */
+    font-weight: 500; /* หนาขึ้น */
     color: #333;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
+#features .feature-item i {
+    font-size: 1.5rem; /* ขนาดใหญ่ขึ้น */
+    margin-right: 15px; /* เพิ่มระยะห่าง */
+    color: #00796b; /* สีไอคอน */
+}
+
 #features .feature-item:hover .feature-link {
-    color: #007bff; /* เปลี่ยนสี link เมื่อ hover */
+    color: #00796b; /* สี link เมื่อ hover */
 }
 
 /* กำหนดสีให้กับแต่ละรายการ */
-#features .feature-item:nth-child(1) { /* รายการที่ 1 */
-    border-left: 5px solid #0d6efd; /* เส้นขอบซ้ายสีน้ำเงิน */
+#features .feature-item:nth-child(1) {
+    border-left: 5px solid #00796b;
 }
 
-#features .feature-item:nth-child(1) .feature-link:hover {
-    color: #0b5ed7; /* สี link เมื่อ hover (น้ำเงินเข้มขึ้น) */
+#features .feature-item:nth-child(2) {
+    border-left: 5px solid #43a047;
 }
 
-#features .feature-item:nth-child(1):hover {
-     background-color: #e0f2ff; /* สีพื้นหลังเมื่อ hover (ฟ้าอ่อน) */
-}
-
-#features .feature-item:nth-child(2) { /* รายการที่ 2 */
-    border-left: 5px solid #198754; /* เส้นขอบซ้ายสีเขียว */
-}
-
-#features .feature-item:nth-child(2) .feature-link:hover {
-    color: #146c43; /* สี link เมื่อ hover (เขียวเข้มขึ้น) */
-}
-
-#features .feature-item:nth-child(2):hover {
-    background-color: #e8f5e9; /* สีพื้นหลังเมื่อ hover (เขียวอ่อน) */
-}
-
-#features .feature-item:nth-child(3) { /* รายการที่ 3 */
-    border-left: 5px solid #fd7e14; /* เส้นขอบซ้ายสีส้ม */
-}
-
-#features .feature-item:nth-child(3) .feature-link:hover {
-    color: #c25e0e; /* สี link เมื่อ hover (ส้มเข้มขึ้น) */
-}
-
-#features .feature-item:nth-child(3):hover {
-     background-color: #fff4e8; /* สีพื้นหลังเมื่อ hover (ส้มอ่อน) */
+#features .feature-item:nth-child(3) {
+    border-left: 5px solid #e65100;
 }
 
 /* Footer */
 footer {
-    background-color: #2e7d32; /* สีพื้นหลัง Footer (เขียวเข้ม) */
+    background-color: #00796b;
     color: #fff;
     text-align: center;
-    padding: 20px 0;
+    padding: 30px 0; /* เพิ่ม padding */
     position: relative;
     bottom: 0;
     width: 100%;
 }
 
+footer p {
+    margin: 0;
+    font-size: 1rem; /* ขนาดใหญ่ขึ้น */
+}
+
 /* Calculator Styles */
 .calculator {
-    width: 100%; /* ปรับให้ responsive */
-    max-width: 500px; /* กำหนดความกว้างสูงสุด */
-    border: 2px solid #4caf50; /* สีเส้นขอบ Calculator (เขียว) */
+    width: 100%;
+    max-width: 450px; /* ปรับความกว้างสูงสุด */
+    border: 2px solid #00796b;
     border-radius: 10px;
     padding: 25px;
     background-color: #fff;
@@ -184,7 +194,7 @@ footer {
 }
 
 .display input {
-    width: calc(100% - 30px); /* ปรับให้ responsive */
+    width: calc(100% - 30px);
     height: 60px;
     padding: 15px;
     margin-bottom: 15px;
@@ -194,7 +204,7 @@ footer {
     border-radius: 8px;
     background-color: #f0f4f8;
     box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
-    color: #333; /* สีตัวอักษร */
+    color: #333;
 }
 
 .buttons {
@@ -203,175 +213,206 @@ footer {
     grid-gap: 10px;
 }
 
-/* Button Styles (รวมสไตล์ปุ่มทั้งหมดเข้าด้วยกัน) */
+/* Button Styles */
 button {
-    padding: 12px;
+    padding: 15px; /* เพิ่ม padding */
     font-size: 18px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    background-color: #f0f4f8;
+    background-color: #e0e0e0; /* สีพื้นหลังปุ่ม */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* เพิ่ม transition ให้กับ box-shadow */
-    color: #333; /* สีตัวอักษร */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease; /* เพิ่ม transform */
+    color: #333;
 }
 
 button:hover {
-    background-color: #e9ecef;
+    background-color: #bdbdbd; /* สีพื้นหลังปุ่มเมื่อ hover */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px); /* ยกขึ้นเมื่อ hover */
+}
+
+button:active {
+    transform: translateY(0); /* กดแล้วยุบลง */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* เงาลดลงเมื่อกด */
 }
 
 button.operator {
-    background-color: #e0b0ff; /* สีปุ่ม operator */
-    color: #333; /* สีตัวอักษร */
+    background-color: #b2dfdb;
+    color: #333;
 }
 
 button.operator:hover {
-    background-color: #d896ff; /* สีปุ่ม operator เมื่อ hover */
+    background-color: #80cbc4;
 }
 
 button.equal {
-    background-color: #4caf50;
+    background-color: #00796b;
     color: #fff;
 }
 
 button.equal:hover {
-    background-color: #388e3c;
+    background-color: #004d40;
 }
 
 /* Dark Mode */
 body.dark-mode {
-    background-color: #343a40;
-    color: #fff;
+    background-color: #212121;
+    color: #eee;
 }
 
 .dark-mode .calculator {
-    background-color: #495057;
-    border-color: #4caf50;
+    background-color: #424242;
+    border-color: #00796b;
     box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
 }
 
 .dark-mode .display input {
-    background-color: #555;
-    color: #fff;
-    border-color: #6c757d;
+    background-color: #616161;
+    color: #eee;
+    border-color: #9e9e9e;
     box-shadow: inset 0 2px 5px rgba(255, 255, 255, 0.1);
 }
 
 .dark-mode button {
-    background-color: #555;
-    color: #fff;
+    background-color: #616161;
+    color: #eee;
     border: none;
     box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
 }
 
 .dark-mode button:hover {
-    background-color: #6c757d;
+    background-color: #757575;
     box-shadow: 0 2px 4px rgba(255, 255, 255, 0.2);
 }
 
 .dark-mode button.operator {
-    background-color: #75559d; /* สีปุ่ม operator ในโหมดมืด */
-    color: #fff;
+    background-color: #4db6ac;
+    color: #eee;
 }
 
 .dark-mode button.operator:hover {
-    background-color: #9867c5; /* สีปุ่ม operator เมื่อ hover ในโหมดมืด */
+    background-color: #009688;
 }
 
 .dark-mode button.equal {
-    background-color: #388e3c;
+    background-color: #00796b;
 }
 
 .dark-mode button.equal:hover {
-    background-color: #2e7d32;
+    background-color: #004d40;
 }
 
 /* SweetAlert2 Popup */
 .swal2-popup {
-    font-size: 0.8rem; /* ปรับขนาด font ของ SweetAlert2 */
+    font-size: 1rem; /* ปรับขนาด font ของ SweetAlert2 */
+    font-family: 'Kanit', sans-serif; /* ใช้ฟอนต์เดียวกับเว็บ */
 }
 
 .swal2-title {
-    color: #333; /* สี title ของ SweetAlert2 */
+    color: #333;
 }
 
 .swal2-content {
-    color: #555; /* สี content ของ SweetAlert2 */
+    color: #555;
 }
 
 .swal2-confirm {
-    background-color: #4caf50 !important; /* สีปุ่ม confirm ของ SweetAlert2 */
+    background-color: #00796b !important;
 }
 
 .swal2-cancel {
-    background-color: #dc3545 !important; /* สีปุ่ม cancel ของ SweetAlert2 */
+    background-color: #d32f2f !important;
 }
 
 /* Truth Table */
 .truth-table-popup .swal2-content {
-    overflow-x: auto; /* เพิ่ม scrollbar แนวนอน */
+    overflow-x: auto;
 }
 
 .truth-table {
     border-collapse: collapse;
     margin: 20px auto;
     border: 1px solid #ddd;
-    width: 100%; /* กำหนดความกว้าง */
-    max-width: 500px; /* กำหนดความกว้างสูงสุด */
+    width: 100%;
+    max-width: 500px;
 }
 
 .truth-table th,
 .truth-table td {
-    padding: 8px;
+    padding: 10px; /* เพิ่ม padding */
     text-align: center;
     border: 1px solid #ddd;
 }
 
 .truth-table th {
-    background-color: #f2f2f2;
+    background-color: #e0e0e0; /* สีพื้นหลัง */
 }
 
 .truth-table .true {
-    color: #4caf50;
+    color: #00796b; /* สี true */
 }
 
 .truth-table .false {
-    color: #dc3545;
+    color: #d32f2f; /* สี false */
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     .calculator {
-        width: 95%;
-        padding: 15px;
+        max-width: 90%; /* ปรับความกว้าง */
+        padding: 20px; /* ปรับ padding */
     }
 
     .display input {
-        font-size: 20px;
+        font-size: 22px; /* ปรับขนาด font */
     }
 
     button {
-        font-size: 16px;
+        font-size: 16px; /* ปรับขนาด font */
+        padding: 12px; /* ปรับ padding */
     }
 
     header {
-        padding: 60px 0;
+        padding: 80px 20px; /* ปรับ padding */
     }
 
     header h1 {
-        font-size: 2rem;
+        font-size: 2.5rem; /* ปรับขนาด font */
     }
 
     header p {
-        font-size: 1rem;
+        font-size: 1.2rem; /* ปรับขนาด font */
     }
 
     section {
-        padding: 40px 0;
+        padding: 60px 0; /* ปรับ padding */
     }
 
     section h2 {
-        font-size: 1.8rem;
+        font-size: 2rem; /* ปรับขนาด font */
+        margin-bottom: 30px; /* ปรับระยะห่าง */
     }
-}
+
+    #features .feature-item {
+        margin-bottom: 20px; /* ปรับระยะห่าง */
+        padding: 15px; /* ปรับ padding */
+    }
+
+    #features .feature-link {
+        font-size: 1.2rem; /* ปรับขนาด font */
+    }
+
+    #features .feature-item i {
+        font-size: 1.3rem; /* ปรับขนาด font */
+        margin-right: 10px; /* ปรับระยะห่าง */
+    }
+
+    footer {
+        padding: 20px 0; /* ปรับ padding */
+    }
+
+    footer p {
+        font-size: 0.9rem; /* ปรับขนาด font */
+    }
+    }
