@@ -81,10 +81,44 @@ section h2 {
 }
 
 /* Features */
-#features ul li {
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
+/* style.css */
+
+/* ... โค้ด CSS ก่อนหน้า ... */
+
+/* Features (ปรับปรุง) */
+#features ul {
+    padding: 0; /* ลบ padding ของ <ul> */
+}
+
+#features .feature-item {
+    margin-bottom: 20px; /* เพิ่มระยะห่างระหว่างรายการ */
+    padding: 15px; /* เพิ่ม padding ภายในรายการ */
+    border-radius: 10px; /* ทำให้มุมมน */
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* เพิ่ม transition */
+    display: flex; /* ใช้ flexbox */
+    align-items: center; /* จัดให้อยู่ตรงกลางแนวตั้ง */
+}
+
+#features .feature-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* เพิ่มเงาเมื่อ hover */
+    transform: translateY(-5px); /* ยกขึ้นเล็กน้อยเมื่อ hover */
+}
+
+#features .feature-link {
+    font-size: 1.2rem; /* เพิ่มขนาด font */
+    font-weight: bold; /* ตัวหนา */
+    color: #333; /* สีข้อความ */
+    text-decoration: none; /* ไม่ขีดเส้นใต้ */
+    transition: color 0.3s ease; /* เพิ่ม transition */
+}
+
+#features .feature-item:hover .feature-link {
+    color: #007bff; /* เปลี่ยนสีเมื่อ hover */
+}
+
+#features .feature-item i {
+    font-size: 1.5rem; /* เพิ่มขนาด icon */
+    margin-right: 15px; /* เพิ่มระยะห่างระหว่าง icon กับข้อความ */
 }
 
 /* Footer */
