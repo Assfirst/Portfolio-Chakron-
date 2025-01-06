@@ -3,7 +3,7 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f8f8f8;
+    background-color: #f0f4f8; /* สีพื้นหลังหลัก */
     color: #333;
 }
 
@@ -16,16 +16,90 @@ body {
     padding-right: 15px;
 }
 
+/* Navigation */
+.navbar {
+    background-color: #3498db; /* สีพื้นหลัง Navbar */
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: #fff;
+}
+
+.navbar-nav .nav-link {
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #d6eaf8;
+}
+
+.navbar-nav .nav-link.active {
+    font-weight: bold;
+    border-bottom: 3px solid #fff;
+}
+
+/* Header */
+header {
+    text-align: center;
+    background-color: #d6eaf8; /* สีพื้นหลัง Header */
+    padding: 80px 0;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+header p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Sections */
+section {
+    padding: 60px 0;
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+     color: #3498db; /* สีของหัวข้อ */
+}
+
+/* Features */
+#features ul li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+/* Footer */
+footer {
+    background: #34495e; /* สีพื้นหลัง Footer */
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+
 /* Calculator Styles */
 .calculator {
     width: 500px;
-    border: 2px solid #333;
+    border: 2px solid #3498db; /* สีเส้นขอบ */
     border-radius: 10px;
     padding: 25px;
     background-color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    margin: 20px auto; /* เพิ่ม margin ตรงกลาง */
+    margin: 20px auto;
 }
+
 
 .display input {
     width: 90%;
@@ -36,23 +110,25 @@ body {
     text-align: right;
     border: 1px solid #ccc;
     border-radius: 8px;
-    background-color: #f8f8f8;
+    background-color: #f0f4f8; /* สีพื้นหลัง input */
     box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
 
 .buttons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 10px; /* ลดช่องว่างปุ่มลง */
+    grid-gap: 10px;
 }
 
+
 button {
-    padding: 12px; /* ลด padding ปุ่มลง */
-    font-size: 18px; /* ลดขนาด font ปุ่มลง */
+   padding: 12px;
+    font-size: 18px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    background-color: #f8f8f8;
+    background-color: #f0f4f8; /* สีพื้นหลังปุ่ม */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s ease;
 }
@@ -63,75 +139,81 @@ button:hover {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
+
 button.operator {
-    background-color: #e8e8e8;
+    background-color: #ecf0f1; /* สีพื้นหลังปุ่มตัวดำเนินการ */
+     color: #3498db; /* สีปุ่มตัวดำเนินการ */
 }
+
 
 button.operator:hover {
-    background-color: #d8d8d8;
+    background-color: #d6eaf8;
 }
 
+
 button.equal {
-    background-color: #6290c3;
+    background-color: #2ecc71; /* สีปุ่มเท่ากับ */
     color: #fff;
 }
 
 button.equal:hover {
-    background-color: #4a77a8;
+    background-color: #27ae60;
 }
+
 
 /* Dark Mode */
 body.dark-mode {
-    background-color: #333;
-    color: #f4f4f4;
+    background-color: #2c3e50; /* สีพื้นหลัง Dark Mode */
+    color: #ecf0f1;
 }
 
 .calculator.dark-mode {
-    background-color: #444;
-    border-color: #666;
+    background-color: #34495e; /* สีพื้นหลัง Dark Mode */
+    border-color: #3498db;
     box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
 }
 
 .display input.dark-mode {
-    background-color: #555;
-    color: #f4f4f4;
+    background-color: #4d6177; /* สีพื้นหลัง input Dark Mode */
+    color: #ecf0f1;
     border-color: #777;
     box-shadow: inset 0 2px 5px rgba(255, 255, 255, 0.1);
 }
 
 button.dark-mode {
-    background-color: #666;
-    color: #f4f4f4;
+    background-color: #4d6177; /* สีพื้นหลังปุ่ม Dark Mode */
+    color: #ecf0f1;
     border-color: #888;
     box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
 }
 
 button.dark-mode:hover {
-    background-color: #777;
+    background-color: #5d7187;
     box-shadow: 0 2px 4px rgba(255, 255, 255, 0.2);
 }
 
 button.dark-mode.operator {
-    background-color: #555;
+    background-color: #777;
+      color: #ecf0f1;
 }
 
 button.dark-mode.operator:hover {
-    background-color: #444;
+    background-color: #666;
 }
 
 button.dark-mode.equal {
-    background-color: #4a77a8;
+    background-color: #27ae60;
 }
 
 button.dark-mode.equal:hover {
-    background-color: #3e628c;
+    background-color: #1e8449;
 }
 
 /* SweetAlert2 Popup */
 .truth-table-popup {
     font-size: 0.8rem;
 }
-  
+
 .truth-table {
     border-collapse: collapse;
     margin: 20px auto;
@@ -155,4 +237,4 @@ button.dark-mode.equal:hover {
 
 .truth-table .false {
     color: red;
-}
+    }
