@@ -17,8 +17,8 @@ body {
 }
 
 /* Navigation */
+/* Navigation */
 .navbar {
-    background-color: #6a5acd; /* เปลี่ยนสีพื้นหลัง Navbar (สีม่วงสวย) */
     color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
