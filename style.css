@@ -9,7 +9,7 @@ body {
 
 /* Navigation */
 .navbar {
-    background-color: #343a40; /* สีพื้นหลัง Navbar */
+    background-color: #000; /* เปลี่ยนสีพื้นหลัง Navbar ให้เป็นสีดำ */
     color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -33,15 +33,21 @@ body {
     border-bottom: 3px solid #fff;
 }
 
+
 /* ปรับแต่งปุ่ม Hamburger Menu */
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.1); /* เปลี่ยนสีเส้นขอบปุ่ม Hamburger Menu เป็นสีขาว */
+}
 .navbar-toggler-icon {
     background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
 }
 
+
+
 /* Header */
 header {
     text-align: center;
-    background-color: # #000; /* สีพื้นหลัง Header */
+    background-color: #e9ecef;
     padding: 80px 0;
 }
 
@@ -54,7 +60,7 @@ header h1 {
 header p {
     font-size: 1.2rem;
     line-height: 1.6;
-     color: #343a40;
+    color: #343a40;
 }
 
 /* Sections */
@@ -66,7 +72,7 @@ section h2 {
     text-align: center;
     margin-bottom: 30px;
     font-size: 2rem;
-    color: #007bff; /* สีหัวข้อส่วน */
+    color: #007bff;
 }
 
 /* Features */
@@ -78,7 +84,7 @@ section h2 {
 
 /* Footer */
 footer {
-    background-color: #343a40; /* สีพื้นหลัง Footer */
+    background-color: #343a40;
     color: #fff;
     text-align: center;
     padding: 20px 0;
@@ -137,8 +143,8 @@ button:hover {
 
 
 button.operator {
-     background-color: #e9ecef;
-     color: #007bff; /* สีปุ่มตัวดำเนินการ */
+    background-color: #e9ecef;
+     color: #007bff;
 }
 
 
@@ -158,7 +164,7 @@ button.equal:hover {
 
 /* Dark Mode */
 body.dark-mode {
-    background-color: #343a40; /* สีพื้นหลัง Dark Mode */
+    background-color: #343a40;
     color: #fff;
 }
 
@@ -188,8 +194,8 @@ button.dark-mode:hover {
 }
 
 button.dark-mode.operator {
-    background-color: #5a6268;
-     color: #fff;
+     background-color: #5a6268;
+    color: #fff;
 }
 
 button.dark-mode.operator:hover {
