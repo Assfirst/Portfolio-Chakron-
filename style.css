@@ -18,7 +18,7 @@ body {
 
 /* Navigation */
 .navbar {
-    background-color: #ff8c00; /* สีพื้นหลัง Navbar (ส้มเข้ม) */
+    background-color: #6a5acd; /* เปลี่ยนสีพื้นหลัง Navbar (สีม่วงสวย) */
     color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
@@ -34,7 +34,7 @@ body {
 }
 
 .navbar-nav .nav-link:hover {
-    color: #ffd580;
+    color: #e0b0ff;
 }
 
 .navbar-nav .nav-link.active {
@@ -50,14 +50,14 @@ body {
 /* Header */
 header {
     text-align: center;
-    background-color: #fdf0e1; /* สีพื้นหลัง Header (ครีมอ่อน) */
+    background-color: #e6e6fa; /* สีพื้นหลัง Header (ม่วงอ่อน) */
     padding: 80px 0;
 }
 
 header h1 {
     font-size: 2.5rem;
     margin-bottom: 10px;
-     color: #ff8c00; /* สีตัวอักษร Header (ส้ม) */
+     color: #6a5acd; /* สีตัวอักษร Header (ม่วง) */
 }
 
 header p {
@@ -141,7 +141,7 @@ button:hover {
 
 button.operator {
      background-color: #e9ecef;
-     color: #ff8c00;
+     color: #6a5acd;
 }
 
 button.operator:hover {
