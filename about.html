@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ผู้จัดทำ</title>
+    <title>เกี่ยวกับเรา | Chakron.com</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-     <link rel="stylesheet" href="style.css">
-      <link rel="stylesheet" href="about.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">Chakron.com</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,46 +28,94 @@
                     <li class="nav-item">
                         <a class="nav-link" href="scientific.html">เครื่องคิดเลขวิทยาศาสตร์</a>
                     </li>
-                     <li class="nav-item">
+                    <li class="nav-item">
                         <a class="nav-link active" href="about.html">ผู้จัดทำ</a>
-                    </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="#contact">ติดต่อเรา</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-    <div class="container mt-5">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card shadow">
-                    <div class="card-body">
-                        <div class="row align-items-center">
-                            <div class="col-md-4">
-                                <img src="your-image.jpg" alt="Chakron Yuraket" class="img-fluid rounded-circle shadow-sm" id="profile-image">
-                            </div>
-                            <div class="col-md-8">
-                                <h1 class="card-title mb-4 text-center">ผู้จัดทำ</h1>
-                                <p class="card-text">
-                                    <strong>ชื่อ:</strong>ชาคร ยุระเกตุ (Chakron Yuraket)
-                                </p>
-                                <p class="card-text">
-                                    <strong>อาชีพ:</strong>
-                                </p>
-                                <p class="card-text">
-                                  <strong>ติดต่อ:</strong> <a href="mailto:your-email@example.com">kingfirst000@gmail.com</a>
-                                  </p>
-                                <p class="card-text">
-                                  <strong>GitHub:</strong> <a href="https://github.com/Assfirst" target="_blank">https://github.com/Assfirst</a>
-                                </p>
-                            </div>
+
+    <header class="py-5 mt-5">
+        <div class="container text-center">
+            <h1 class="display-4">เกี่ยวกับผู้จัดทำ</h1>
+            <p class="lead">ข้อมูลเกี่ยวกับผู้พัฒนาเว็บไซต์ Chakron.com</p>
+        </div>
+    </header>
+
+    <section id="about-me" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <img src="https://media.discordapp.net/attachments/977217845716570152/1213333021193805904/20240212_171811_0000.png?ex=65f51742&is=65e2a242&hm=10e079c44f45e39c576833f65d07d95755874b19b966d59561f98f09b758534f&=&format=webp&quality=lossless" alt="Chakron Yuraket" class="img-fluid rounded-circle">
+                </div>
+                <div class="col-md-8">
+                    <h2>Chakron Yuraket</h2>
+                    <p class="lead">ฟรีแลนซ์</p>
+                    <p>สวัสดีครับ! ผมชื่อชาคร ยุระเกตุ ผมมีความสนใจในด้านการพัฒนาเว็บไซต์ และมีความมุ่งมั่นที่จะสร้างเว็บไซต์ที่ใช้งานง่าย สวยงาม และตอบโจทย์ผู้ใช้งาน</p>
+                    <p>ผมมีประสบการณ์ในการพัฒนาเว็บไซต์โดยใช้ HTML, CSS, JavaScript และ Bootstrap และผมกำลังศึกษาเพิ่มเติมเกี่ยวกับ React และ Node.js เพื่อพัฒนาทักษะของผมให้ดียิ่งขึ้น</p>
+                    
+                    <a href="https://www.facebook.com/chakron.yuraket/" target="_blank" class="btn btn-primary mt-3 me-2"><i class="fab fa-facebook-f me-2"></i>Facebook</a>
+                    <a href="https://github.com/Chakron2545" target="_blank" class="btn btn-secondary mt-3"><i class="fab fa-github me-2"></i>GitHub</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">ทักษะ</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h4 class="card-title"><i class="fas fa-code me-2 text-primary"></i>การพัฒนาเว็บไซต์</h4>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">HTML</li>
+                                <li class="list-group-item">CSS</li>
+                                <li class="list-group-item">JavaScript</li>
+                                <li class="list-group-item">Bootstrap</li>
+                                <li class="list-group-item">React (กำลังศึกษา)</li>
+                                <li class="list-group-item">Node.js (กำลังศึกษา)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h4 class="card-title"><i class="fas fa-tools me-2 text-success"></i>เครื่องมือ</h4>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Visual Studio Code</li>
+                                <li class="list-group-item">Git</li>
+                                <li class="list-group-item">GitHub</li>
+                                <li class="list-group-item">Figma (พื้นฐาน)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h4 class="card-title"><i class="fas fa-language me-2 text-warning"></i>ภาษา</h4>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">ภาษาไทย (ภาษาแม่)</li>
+                                <li class="list-group-item">ภาษาอังกฤษ (พอใช้)</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <footer class="py-3">
+        <div class="container">
+            <p class="m-0">© 2025 Chakron Yuraket</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
-</html>
+    </html>
