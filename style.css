@@ -3,38 +3,29 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: # #000; /* สีพื้นหลังหลัก */
-    color: #333;
-}
-
-/* ปรับแต่ง Container ให้ตรงกลาง */
-.container {
-    max-width: 960px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 15px;
-    padding-right: 15px;
+    background-color: #f8f9fa; /* สีพื้นหลังหลัก */
+    color: #343a40;
 }
 
 /* Navigation */
 .navbar {
-    background-color: #000; /* เปลี่ยนสีพื้นหลัง Navbar ให้เป็นสีดำ */
+    background-color: #343a40; /* สีพื้นหลัง Navbar */
     color: #fff;
-    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1); /* เพิ่มเงา */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-brand {
     font-weight: bold;
-    color: #fff; /* เปลี่ยนสีตัวอักษรของแบรนด์ให้เป็นสีขาว */
+    color: #fff;
 }
 
 .navbar-nav .nav-link {
-    color: #fff; /* เปลี่ยนสีตัวอักษรของลิงก์ให้เป็นสีขาว */
+    color: #fff;
     transition: color 0.3s ease;
 }
 
 .navbar-nav .nav-link:hover {
-    color: #ddd; /* เปลี่ยนสีตัวอักษรเมื่อ hover */
+    color: #adb5bd;
 }
 
 .navbar-nav .nav-link.active {
@@ -42,7 +33,7 @@ body {
     border-bottom: 3px solid #fff;
 }
 
-/* ปรับแต่งปุ่ม Hamburger Menu ให้มองเห็นได้ชัดเจน */
+/* ปรับแต่งปุ่ม Hamburger Menu */
 .navbar-toggler-icon {
     background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
 }
@@ -50,20 +41,20 @@ body {
 /* Header */
 header {
     text-align: center;
-    background-color: #d6eaf8; /* สีพื้นหลัง Header */
+    background-color: #e9ecef; /* สีพื้นหลัง Header */
     padding: 80px 0;
 }
 
 header h1 {
     font-size: 2.5rem;
     margin-bottom: 10px;
-    color: #333;
+     color: #343a40;
 }
 
 header p {
     font-size: 1.2rem;
     line-height: 1.6;
-    color: #333;
+     color: #343a40;
 }
 
 /* Sections */
@@ -75,7 +66,7 @@ section h2 {
     text-align: center;
     margin-bottom: 30px;
     font-size: 2rem;
-     color: #3498db; /* สีของหัวข้อ */
+    color: #007bff; /* สีหัวข้อส่วน */
 }
 
 /* Features */
@@ -87,7 +78,7 @@ section h2 {
 
 /* Footer */
 footer {
-    background: #34495e; /* สีพื้นหลัง Footer */
+    background-color: #343a40; /* สีพื้นหลัง Footer */
     color: #fff;
     text-align: center;
     padding: 20px 0;
@@ -97,11 +88,11 @@ footer {
 /* Calculator Styles */
 .calculator {
     width: 500px;
-    border: 2px solid #3498db; /* สีเส้นขอบ */
+    border: 2px solid #007bff;
     border-radius: 10px;
     padding: 25px;
     background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     margin: 20px auto;
 }
 
@@ -113,9 +104,9 @@ footer {
     margin-bottom: 15px;
     font-size: 24px;
     text-align: right;
-    border: 1px solid #ccc;
+    border: 1px solid #ced4da;
     border-radius: 8px;
-    background-color: #f0f4f8; /* สีพื้นหลัง input */
+    background-color: #e9ecef;
     box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -133,85 +124,84 @@ button {
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    background-color: #f0f4f8; /* สีพื้นหลังปุ่ม */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease;
 }
 
 
 button:hover {
-    background-color: #e8e8e8;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    background-color: #e9ecef;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 
 button.operator {
-    background-color: #ecf0f1; /* สีพื้นหลังปุ่มตัวดำเนินการ */
-     color: #3498db; /* สีปุ่มตัวดำเนินการ */
+     background-color: #e9ecef;
+     color: #007bff; /* สีปุ่มตัวดำเนินการ */
 }
 
 
 button.operator:hover {
-    background-color: #d6eaf8;
+    background-color: #dee2e6;
 }
 
 
 button.equal {
-    background-color: #2ecc71; /* สีปุ่มเท่ากับ */
+    background-color: #28a745;
     color: #fff;
 }
 
 button.equal:hover {
-    background-color: #27ae60;
+    background-color: #218838;
 }
-
 
 /* Dark Mode */
 body.dark-mode {
-    background-color: #2c3e50; /* สีพื้นหลัง Dark Mode */
-    color: #ecf0f1;
+    background-color: #343a40; /* สีพื้นหลัง Dark Mode */
+    color: #fff;
 }
 
 .calculator.dark-mode {
-    background-color: #34495e; /* สีพื้นหลัง Dark Mode */
-    border-color: #3498db;
+    background-color: #495057;
+    border-color: #007bff;
     box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
 }
 
 .display input.dark-mode {
-    background-color: #4d6177; /* สีพื้นหลัง input Dark Mode */
-    color: #ecf0f1;
-    border-color: #777;
+    background-color: #495057;
+    color: #fff;
+    border-color: #ced4da;
     box-shadow: inset 0 2px 5px rgba(255, 255, 255, 0.1);
 }
 
 button.dark-mode {
-    background-color: #4d6177; /* สีพื้นหลังปุ่ม Dark Mode */
-    color: #ecf0f1;
-    border-color: #888;
+    background-color: #495057;
+    color: #fff;
+    border-color: #ced4da;
     box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
 }
 
 button.dark-mode:hover {
-    background-color: #5d7187;
+    background-color: #5a6268;
     box-shadow: 0 2px 4px rgba(255, 255, 255, 0.2);
 }
 
 button.dark-mode.operator {
-    background-color: #777;
-      color: #ecf0f1;
+    background-color: #5a6268;
+     color: #fff;
 }
 
 button.dark-mode.operator:hover {
-    background-color: #666;
+    background-color: #6c757d;
 }
 
 button.dark-mode.equal {
-    background-color: #27ae60;
+    background-color: #218838;
 }
 
 button.dark-mode.equal:hover {
-    background-color: #1e8449;
+    background-color: #1e7e34;
 }
 
 /* SweetAlert2 Popup */
@@ -237,9 +227,9 @@ button.dark-mode.equal:hover {
 }
 
 .truth-table .true {
-    color: green;
+    color: #28a745;
 }
 
 .truth-table .false {
-    color: red;
-                               }
+    color: #dc3545;
+    }
