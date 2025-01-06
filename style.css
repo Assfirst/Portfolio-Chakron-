@@ -90,35 +90,74 @@ section h2 {
     padding: 0; /* ลบ padding ของ <ul> */
 }
 
+/* style.css */
+
+/* ... โค้ด CSS ก่อนหน้า ... */
+
+/* Features (เพิ่มสีสัน) */
 #features .feature-item {
-    margin-bottom: 20px; /* เพิ่มระยะห่างระหว่างรายการ */
-    padding: 15px; /* เพิ่ม padding ภายในรายการ */
-    border-radius: 10px; /* ทำให้มุมมน */
-    transition: box-shadow 0.3s ease, transform 0.3s ease; /* เพิ่ม transition */
-    display: flex; /* ใช้ flexbox */
-    align-items: center; /* จัดให้อยู่ตรงกลางแนวตั้ง */
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease, background-color 0.3s ease; /* เพิ่ม background-color ใน transition */
+    display: flex;
+    align-items: center;
+    background-color: #f8f9fa; /* สีพื้นหลังอ่อนๆ */
 }
 
 #features .feature-item:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* เพิ่มเงาเมื่อ hover */
-    transform: translateY(-5px); /* ยกขึ้นเล็กน้อยเมื่อ hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+    background-color: #e9ecef; /* สีพื้นหลังเข้มขึ้นเมื่อ hover */
 }
 
 #features .feature-link {
-    font-size: 1.2rem; /* เพิ่มขนาด font */
-    font-weight: bold; /* ตัวหนา */
-    color: #333; /* สีข้อความ */
-    text-decoration: none; /* ไม่ขีดเส้นใต้ */
-    transition: color 0.3s ease; /* เพิ่ม transition */
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 #features .feature-item:hover .feature-link {
-    color: #007bff; /* เปลี่ยนสีเมื่อ hover */
+    color: #007bff; /* เปลี่ยนสี link เมื่อ hover */
 }
 
-#features .feature-item i {
-    font-size: 1.5rem; /* เพิ่มขนาด icon */
-    margin-right: 15px; /* เพิ่มระยะห่างระหว่าง icon กับข้อความ */
+/* กำหนดสีให้กับแต่ละรายการ */
+#features .feature-item:nth-child(1) { /* รายการที่ 1 */
+    border-left: 5px solid #0d6efd; /* เส้นขอบซ้ายสีน้ำเงิน */
+}
+
+#features .feature-item:nth-child(1) .feature-link:hover {
+    color: #0b5ed7; /* สี link เมื่อ hover (น้ำเงินเข้มขึ้น) */
+}
+
+#features .feature-item:nth-child(1):hover {
+     background-color: #e0f2ff; /* สีพื้นหลังเมื่อ hover (ฟ้าอ่อน) */
+}
+
+#features .feature-item:nth-child(2) { /* รายการที่ 2 */
+    border-left: 5px solid #198754; /* เส้นขอบซ้ายสีเขียว */
+}
+
+#features .feature-item:nth-child(2) .feature-link:hover {
+    color: #146c43; /* สี link เมื่อ hover (เขียวเข้มขึ้น) */
+}
+
+#features .feature-item:nth-child(2):hover {
+    background-color: #e8f5e9; /* สีพื้นหลังเมื่อ hover (เขียวอ่อน) */
+}
+
+#features .feature-item:nth-child(3) { /* รายการที่ 3 */
+    border-left: 5px solid #fd7e14; /* เส้นขอบซ้ายสีส้ม */
+}
+
+#features .feature-item:nth-child(3) .feature-link:hover {
+    color: #c25e0e; /* สี link เมื่อ hover (ส้มเข้มขึ้น) */
+}
+
+#features .feature-item:nth-child(3):hover {
+     background-color: #fff4e8; /* สีพื้นหลังเมื่อ hover (ส้มอ่อน) */
 }
 
 /* Footer */
