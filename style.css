@@ -3,7 +3,7 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #222; /* สีพื้นหลังหลัก (ดำ) */
+    background-color: #333; /* สีพื้นหลังหลัก (ดำ) */
     color: #222; /* สีตัวอักษรหลัก (ขาว) */
 }
 
@@ -24,11 +24,11 @@ body {
 
 .navbar-brand {
     font-weight: bold;
-    color: #fff; /* สีตัวอักษรแบรนด์ */
+    color: #222; /* สีตัวอักษรแบรนด์ */
 }
 
 .navbar-nav .nav-link {
-    color: #fff; /* สีตัวอักษรลิงก์ */
+    color: #222; /* สีตัวอักษรลิงก์ */
     transition: color 0.3s ease;
 }
 
