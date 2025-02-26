@@ -1,74 +1,60 @@
-/* style.css */
+/* เพิ่ม Animation keyframes */
+@keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
 
-/* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600&display=swap');
+@keyframes twinkling {
+    0% { opacity: 0.3; }
+    50% { opacity: 1; }
+    100% { opacity: 0.3; }
+}
 
-/* General Styles */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ปรับ Body */
 body {
-    font-family: 'Kanit', sans-serif; /* เปลี่ยนฟอนต์ */
-    margin: 0;
-    padding: 0;
-    background-color: #f5f5f5; /* สีพื้นหลังหลัก (เทาอ่อนมาก) */
-    color: #333; /* สีตัวอักษรหลัก */
-    transition: background-color 0.3s ease, color 0.3s ease;
+    background: linear-gradient(45deg, #0a192f, #20314f, #2a4365);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: #fff;
 }
 
-/* ปรับแต่ง Container ให้ตรงกลาง */
-.container {
-    max-width: 1024px; /* เพิ่มความกว้าง */
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 20px; /* เพิ่ม padding */
-    padding-right: 20px;
-}
-
-/* Navigation */
+/* Navbar สไตล์ใหม่ */
 .navbar {
-    background-color: #00796b; /* สีพื้นหลัง Navbar (เขียวเข้ม) */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    background: rgba(10, 25, 47, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(72, 187, 255, 0.2);
 }
 
 .navbar-brand {
-    font-weight: 600; /* หนาขึ้น */
-    color: #fff;
-    font-size: 1.4rem; /* ขนาดใหญ่ขึ้น */
+    color: #64ffda !important;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(100, 255, 218, 0.5);
 }
 
 .navbar-nav .nav-link {
-    color: #fff;
-    transition: color 0.3s ease, background-color 0.3s ease; /* เพิ่ม transition */
-    padding: 0.5rem 1rem; /* เพิ่ม padding */
-    border-radius: 5px; /* มนขึ้น */
-    margin-left: 5px; /* เพิ่มระยะห่าง */
+    color: #8892b0 !important;
+    transition: all 0.3s ease;
 }
 
-.navbar-nav .nav-link:hover {
-    color: #00796b; /* สีเมื่อ hover */
-    background-color: #fff; /* พื้นหลังเมื่อ hover */
-}
-
+.navbar-nav .nav-link:hover,
 .navbar-nav .nav-link.active {
-    font-weight: 500; /* หนาขึ้น */
-    border-bottom: none; /* ลบเส้นใต้ */
-    background-color: #fff; /* พื้นหลัง */
-    color: #00796b; /* สีตัวอักษร */
+    color: #64ffda !important;
+    text-shadow: 0 0 10px rgba(100, 255, 218, 0.5);
 }
 
-/* ปรับแต่งปุ่ม Hamburger Menu */
-.navbar-toggler {
-    border: none; /* ลบเส้นขอบ */
-}
-
-.navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
-}
-
-/* Header */
+/* Header แบบ Galaxy */
 header {
-    text-align: center;
-    background: linear-gradient(135deg, #a5d6a7, #e8f5e9); /* ไล่สีพื้นหลัง Header */
-    padding: 100px 20px; /* เพิ่ม padding */
-    position: relative; /* กำหนด position */
+    background: transparent;
+    position: relative;
+    overflow: hidden;
+    padding: 150px 0;
 }
 
 header::before {
@@ -76,346 +62,72 @@ header::before {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url("https://www.transparenttextures.com/patterns/cubes.png"); /* เพิ่ม texture */
-    opacity: 0.3; /* ปรับความโปร่งใส */
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px);
+    background-size: 550px 550px;
+    animation: twinkling 3s infinite;
+    opacity: 0.3;
 }
 
 header h1 {
-    font-size: 3rem; /* ขนาดใหญ่ขึ้น */
-    margin-bottom: 20px; /* เพิ่มระยะห่าง */
-    color: #00796b; /* สีตัวอักษร Header */
-    font-weight: 600; /* หนาขึ้น */
-    position: relative; /* กำหนด position */
-    z-index: 1; /* วางทับ texture */
+    color: #64ffda;
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-shadow: 0 0 20px rgba(100, 255, 218, 0.5);
+    animation: floating 6s ease-in-out infinite;
 }
 
 header p {
-    font-size: 1.3rem; /* ขนาดใหญ่ขึ้น */
-    line-height: 1.7; /* เพิ่มระยะห่างระหว่างบรรทัด */
-    color: #212529;
-    position: relative; /* กำหนด position */
-    z-index: 1; /* วางทับ texture */
+    color: #8892b0;
+    font-size: 1.5rem;
+    max-width: 600px;
+    margin: 20px auto;
 }
 
-/* Sections */
-section {
-    padding: 80px 0; /* เพิ่ม padding */
-}
-
-section h2 {
-    text-align: center;
-    margin-bottom: 40px; /* เพิ่มระยะห่าง */
-    font-size: 2.5rem; /* ขนาดใหญ่ขึ้น */
-    color: #00796b; /* สีหัวข้อ Section */
-    font-weight: 600; /* หนาขึ้น */
-}
-
-/* Features */
-#features ul {
-    padding: 0;
-    list-style: none; /* ลบสัญลักษณ์หัวข้อย่อย */
-}
-
+/* Features section */
 #features .feature-item {
-    margin-bottom: 25px; /* เพิ่มระยะห่าง */
-    padding: 20px; /* เพิ่ม padding */
-    border-radius: 10px;
-    transition: box-shadow 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
-    display: flex;
-    align-items: center;
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
+    background: rgba(10, 25, 47, 0.5);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(100, 255, 218, 0.2);
+    transition: all 0.3s ease;
 }
 
 #features .feature-item:hover {
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15); /* เพิ่มเงาเมื่อ hover */
-    transform: translateY(-5px); /* ยกขึ้นเมื่อ hover */
+    transform: translateY(-10px);
+    border-color: #64ffda;
+    box-shadow: 0 0 20px rgba(100, 255, 218, 0.2);
 }
 
 #features .feature-link {
-    font-size: 1.3rem; /* ขนาดใหญ่ขึ้น */
-    font-weight: 500; /* หนาขึ้น */
-    color: #333;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-#features .feature-item i {
-    font-size: 1.5rem; /* ขนาดใหญ่ขึ้น */
-    margin-right: 15px; /* เพิ่มระยะห่าง */
-    color: #00796b; /* สีไอคอน */
+    color: #8892b0;
 }
 
 #features .feature-item:hover .feature-link {
-    color: #00796b; /* สี link เมื่อ hover */
+    color: #64ffda;
 }
 
-/* กำหนดสีให้กับแต่ละรายการ */
-#features .feature-item:nth-child(1) {
-    border-left: 5px solid #00796b;
+#features .feature-item i {
+    color: #64ffda;
 }
 
-#features .feature-item:nth-child(2) {
-    border-left: 5px solid #43a047;
+/* About section */
+#about {
+    background: rgba(10, 25, 47, 0.3);
+    backdrop-filter: blur(5px);
 }
 
-#features .feature-item:nth-child(3) {
-    border-left: 5px solid #00796b;
-}
-#features .feature-item:nth-child(4) {
-    border-left: 5px solid #e65100;
+#about mark {
+    background: rgba(100, 255, 218, 0.1);
+    color: #64ffda;
+    padding: 2px 5px;
+    border-radius: 3px;
 }
 
 /* Footer */
 footer {
-    background-color: #00796b;
-    color: #fff;
-    text-align: center;
-    padding: 30px 0; /* เพิ่ม padding */
-    position: relative;
-    bottom: 0;
-    width: 100%;
+    background: rgba(10, 25, 47, 0.95);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(72, 187, 255, 0.2);
 }
-
-footer p {
-    margin: 0;
-    font-size: 1rem; /* ขนาดใหญ่ขึ้น */
-}
-
-/* Calculator Styles */
-.calculator {
-    width: 100%;
-    max-width: 450px; /* ปรับความกว้างสูงสุด */
-    border: 2px solid #00796b;
-    border-radius: 10px;
-    padding: 25px;
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    margin: 20px auto;
-}
-
-.display input {
-    width: calc(100% - 30px);
-    height: 60px;
-    padding: 15px;
-    margin-bottom: 15px;
-    font-size: 24px;
-    text-align: right;
-    border: 1px solid #ced4da;
-    border-radius: 8px;
-    background-color: #f0f4f8;
-    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
-    color: #333;
-}
-
-.buttons {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 10px;
-}
-
-/* Button Styles */
-button {
-    padding: 15px; /* เพิ่ม padding */
-    font-size: 18px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    background-color: #e0e0e0; /* สีพื้นหลังปุ่ม */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease; /* เพิ่ม transform */
-    color: #333;
-}
-
-button:hover {
-    background-color: #bdbdbd; /* สีพื้นหลังปุ่มเมื่อ hover */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    transform: translateY(-2px); /* ยกขึ้นเมื่อ hover */
-}
-
-button:active {
-    transform: translateY(0); /* กดแล้วยุบลง */
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* เงาลดลงเมื่อกด */
-}
-
-button.operator {
-    background-color: #b2dfdb;
-    color: #333;
-}
-
-button.operator:hover {
-    background-color: #80cbc4;
-}
-
-button.equal {
-    background-color: #00796b;
-    color: #fff;
-}
-
-button.equal:hover {
-    background-color: #004d40;
-}
-
-/* Dark Mode */
-body.dark-mode {
-    background-color: #212121;
-    color: #eee;
-}
-
-.dark-mode .calculator {
-    background-color: #424242;
-    border-color: #00796b;
-    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
-}
-
-.dark-mode .display input {
-    background-color: #616161;
-    color: #eee;
-    border-color: #9e9e9e;
-    box-shadow: inset 0 2px 5px rgba(255, 255, 255, 0.1);
-}
-
-.dark-mode button {
-    background-color: #616161;
-    color: #eee;
-    border: none;
-    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
-}
-
-.dark-mode button:hover {
-    background-color: #757575;
-    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.2);
-}
-
-.dark-mode button.operator {
-    background-color: #4db6ac;
-    color: #eee;
-}
-
-.dark-mode button.operator:hover {
-    background-color: #009688;
-}
-
-.dark-mode button.equal {
-    background-color: #00796b;
-}
-
-.dark-mode button.equal:hover {
-    background-color: #004d40;
-}
-
-/* SweetAlert2 Popup */
-.swal2-popup {
-    font-size: 1rem; /* ปรับขนาด font ของ SweetAlert2 */
-    font-family: 'Kanit', sans-serif; /* ใช้ฟอนต์เดียวกับเว็บ */
-}
-
-.swal2-title {
-    color: #333;
-}
-
-.swal2-content {
-    color: #555;
-}
-
-.swal2-confirm {
-    background-color: #00796b !important;
-}
-
-.swal2-cancel {
-    background-color: #d32f2f !important;
-}
-
-/* Truth Table */
-.truth-table-popup .swal2-content {
-    overflow-x: auto;
-}
-
-.truth-table {
-    border-collapse: collapse;
-    margin: 20px auto;
-    border: 1px solid #ddd;
-    width: 100%;
-    max-width: 500px;
-}
-
-.truth-table th,
-.truth-table td {
-    padding: 10px; /* เพิ่ม padding */
-    text-align: center;
-    border: 1px solid #ddd;
-}
-
-.truth-table th {
-    background-color: #e0e0e0; /* สีพื้นหลัง */
-}
-
-.truth-table .true {
-    color: #00796b; /* สี true */
-}
-
-.truth-table .false {
-    color: #d32f2f; /* สี false */
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .calculator {
-        max-width: 90%; /* ปรับความกว้าง */
-        padding: 20px; /* ปรับ padding */
-    }
-
-    .display input {
-        font-size: 22px; /* ปรับขนาด font */
-    }
-
-    button {
-        font-size: 16px; /* ปรับขนาด font */
-        padding: 12px; /* ปรับ padding */
-    }
-
-    header {
-        padding: 80px 20px; /* ปรับ padding */
-    }
-
-    header h1 {
-        font-size: 2.5rem; /* ปรับขนาด font */
-    }
-
-    header p {
-        font-size: 1.2rem; /* ปรับขนาด font */
-    }
-
-    section {
-        padding: 60px 0; /* ปรับ padding */
-    }
-
-    section h2 {
-        font-size: 2rem; /* ปรับขนาด font */
-        margin-bottom: 30px; /* ปรับระยะห่าง */
-    }
-
-    #features .feature-item {
-        margin-bottom: 20px; /* ปรับระยะห่าง */
-        padding: 15px; /* ปรับ padding */
-    }
-
-    #features .feature-link {
-        font-size: 1.2rem; /* ปรับขนาด font */
-    }
-
-    #features .feature-item i {
-        font-size: 1.3rem; /* ปรับขนาด font */
-        margin-right: 10px; /* ปรับระยะห่าง */
-    }
-
-    footer {
-        padding: 20px 0; /* ปรับ padding */
-    }
-
-    footer p {
-        font-size: 0.9rem; /* ปรับขนาด font */
-    }
-    }
